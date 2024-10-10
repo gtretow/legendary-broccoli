@@ -22,7 +22,7 @@
     <div class="container">
       <h1 class="container__title">To-Do List</h1>
 
-      <div class="auth auth--section" style="display: none">
+      <div id="login-screen" class="auth auth--section hide">
         <h2 class="auth__title">Login</h2>
         <form class="auth__form auth__form--login" id="login-form">
           <input
@@ -39,17 +39,21 @@
             placeholder="Senha"
             required
           />
-          <button class="auth__button auth__button--submit" type="submit">
+          <button
+            id="auth-button"
+            class="auth__button auth__button--submit"
+            type="submit"
+          >
             Entrar
           </button>
         </form>
         <p class="auth__text">
           Não tem uma conta?
-          <a class="auth__link" href="#" id="show-register">Registre-se</a>
+          <button class="auth__link" id="show-register">Registre-se</button>
         </p>
       </div>
 
-      <div class="auth auth--section auth--register">
+      <div id="register-screen" class="auth auth--section auth--register show">
         <h2 class="auth__title">Registrar</h2>
         <form class="auth__form auth__form--register" id="register-form">
           <input
@@ -72,9 +76,7 @@
         </form>
         <p class="auth__text">
           Já tem uma conta?
-          <a class="auth__link" href="./pages/todoApp.html" id="show-login"
-            >Entre</a
-          >
+          <button class="auth__link" id="show-login">Entre</button>
         </p>
       </div>
     </div>

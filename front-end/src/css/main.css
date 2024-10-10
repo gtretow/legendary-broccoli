@@ -68,4 +68,14 @@ form {
   color: #007bff;
   text-decoration: none;
   font-weight: bold;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
 }
