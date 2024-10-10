@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- styles -->
+    <link rel="stylesheet" href="./src/css/reset.css" />
+    <link rel="stylesheet" href="./src/css/main.css" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,700;1,100;1,200;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Login Page</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="container__title">To-Do List</h1>
+
+      <div class="auth auth--section">
+        <h2 class="auth__title">Login</h2>
+        <form class="auth__form auth__form--login" id="login-form">
+          <input
+            class="auth__input auth__input--username"
+            type="text"
+            id="username"
+            placeholder="Usuário"
+            required
+          />
+          <input
+            class="auth__input auth__input--password"
+            type="password"
+            id="password"
+            placeholder="Senha"
+            required
+          />
+          <button class="auth__button auth__button--submit" type="submit">
+            Entrar
+          </button>
+        </form>
+        <p class="auth__text">
+          Não tem uma conta?
+          <a class="auth__link" href="#" id="show-register">Registre-se</a>
+        </p>
+      </div>
+
+      <div class="auth auth--section auth--register">
+        <h2 class="auth__title">Registrar</h2>
+        <form class="auth__form auth__form--register" id="register-form">
+          <input
+            class="auth__input auth__input--username"
+            type="text"
+            id="reg-username"
+            placeholder="Usuário"
+            required
+          />
+          <input
+            class="auth__input auth__input--password"
+            type="password"
+            id="reg-password"
+            placeholder="Senha"
+            required
+          />
+          <button class="auth__button auth__button--submit" type="submit">
+            Registrar
+          </button>
+        </form>
+        <p class="auth__text">
+          Já tem uma conta?
+          <a class="auth__link" href="./pages/todoApp.html" id="show-login"
+            >Entre</a
+          >
+        </p>
+      </div>
+
+      <div class="todo todo--section">
+        <form class="todo__form" id="task-form">
+          <input
+            class="todo__input todo__input--task-title"
+            type="text"
+            id="task-title"
+            placeholder="Nova tarefa"
+            required
+          />
+          <button class="todo__button todo__button--submit" type="submit">
+            Adicionar
+          </button>
+        </form>
+        <ul class="todo__list" id="task-list"></ul>
+        <button class="todo__button todo__button--logout" id="logout">
+          Logout
+        </button>
+      </div>
+    </div>
+    <script src="./src/js/script.js" defer></script>
+  </body>
+</html>
