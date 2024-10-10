@@ -14,30 +14,68 @@
 
     <!-- styles -->
     <link rel="stylesheet" href="../src/css/todoApp.css" />
+    <link rel="stylesheet" href="../src/css/reset.css" />
 
     <title>Todo App</title>
   </head>
   <body>
-    <h1 class="todo-app__title">Todo App</h1>
+    <div class="container">
+      <h1 class="todo-app__title">Todo App</h1>
 
-    <!-- Formulário para adicionar nova tarefa -->
-    <form class="todo-app__form" id="addTaskForm">
-      <input
-        class="todo-app__input todo-app__input--task-name"
-        type="text"
-        id="taskName"
-        placeholder="Digite a nova tarefa"
-        required
-      />
-      <button class="todo-app__button todo-app__button--submit" type="submit">
-        Adicionar Tarefa
-      </button>
-    </form>
+      <!-- Formulário para adicionar nova tarefa -->
+      <form class="todo-app__form" id="addTaskForm">
+        <input
+          class="todo-app__input todo-app__input--task-name"
+          type="text"
+          id="taskName"
+          placeholder="Digite a nova tarefa"
+          required
+        />
+        <button class="todo-app__button todo-app__button--submit" type="submit">
+          Adicionar Tarefa
+        </button>
+      </form>
 
-    <!-- Lista de tarefas -->
-    <ul class="todo-app__list" id="taskList">
-      <!-- As tarefas serão inseridas aqui -->
-    </ul>
+      <!-- Lista de tarefas -->
+      <ul class="todo-app__list" id="taskList">
+        <!-- As tarefas serão inseridas aqui -->
+        <div class="todo-app__list--taskContainer">
+          <li>teste</li>
+          <div class="todo-app__list--buttonContainer">
+            <button class="btn todo-app__list--deleteButton">Excluir</button>
+            <button class="btn todo-app__list--updateButton">Alterar</button>
+          </div>
+        </div>
+        <div class="todo-app__list--taskContainer">
+          <li>teste</li>
+          <div class="todo-app__list--buttonContainer">
+            <button class="btn todo-app__list--deleteButton">Excluir</button>
+            <button class="btn todo-app__list--updateButton">Alterar</button>
+          </div>
+        </div>
+        <div class="todo-app__list--taskContainer">
+          <li>teste</li>
+          <div class="todo-app__list--buttonContainer">
+            <button class="btn todo-app__list--deleteButton">Excluir</button>
+            <button class="btn todo-app__list--updateButton">Alterar</button>
+          </div>
+        </div>
+        <div class="todo-app__list--taskContainer">
+          <li>teste</li>
+          <div class="todo-app__list--buttonContainer">
+            <button class="btn todo-app__list--deleteButton">Excluir</button>
+            <button class="btn todo-app__list--updateButton">Alterar</button>
+          </div>
+        </div>
+        <div class="todo-app__list--taskContainer">
+          <li>teste</li>
+          <div class="todo-app__list--buttonContainer">
+            <button class="btn todo-app__list--deleteButton">Excluir</button>
+            <button class="btn todo-app__list--updateButton">Alterar</button>
+          </div>
+        </div>
+      </ul>
+    </div>
 
     <script src="../src/js/todoApp.js"></script>
   </body>
