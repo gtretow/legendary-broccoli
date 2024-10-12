@@ -58,8 +58,8 @@ function authenticateToken(req, res, next) {
   });
 }
 
-app.get("/pages/todoApp.html", authenticateToken, (req, res) => {
-  res.sendFile(path.join(__dirname, "pages/todoApp.html"));
+app.get("/pages/todo-app.html", authenticateToken, (req, res) => {
+  res.sendFile(path.join(__dirname, "pages/todo-app.html"));
 });
 
 // Rotas
