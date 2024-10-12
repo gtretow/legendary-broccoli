@@ -68,17 +68,12 @@ router.put(
   [body("taskItem").notEmpty().withMessage("A terafa não pode estar vazia")],
 
   async (req, res) => {
-    console.log("caiu no back");
-    console.log("req", req.body);
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       console.log(errors);
-      console.log("caiu no if");
       return res.status(400).json({ errors: errors.array() });
     }
     const { taskItem } = req.body;
-    console.log(taskItem);
-    console.log(req.body);
     try {
       let task = await Task.findOne({ _id: req.params.id, user: req.user._id });
       if (!task) {

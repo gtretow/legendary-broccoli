@@ -75,7 +75,6 @@ router.post(
 
       const isMatch = await user.matchPassword(password);
       if (!isMatch) {
-        console.log("caiu no erro 2");
         return res.status(400).json({ message: "Credenciais inválidas" });
       }
 
