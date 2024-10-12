@@ -1,4 +1,9 @@
-PORT=5000
-MONGO_URI=mongodb://localhost:27017/todo-app
-REDIS_URL=redis://localhost:6379
-JWT_SECRET=""
+back-end/node_modules/
+front-end/node_modules/
+back-end/.env
+
+logs
+*.log
+npm-debug.log*
+
+.DS_Store
