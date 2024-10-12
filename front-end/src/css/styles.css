@@ -1,5 +1,11 @@
 .container {
+  display: flex;
   justify-content: center;
+}
+
+.auth {
+  display: flex;
+  flex-direction: column;
 }
 
 h1,
@@ -53,6 +59,11 @@ form {
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
+.auth__button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
 .auth__button:hover {
   opacity: 0.7;
   transform: scale(1.1);
@@ -73,7 +84,7 @@ form {
 }
 
 .show {
-  display: block;
+  display: flex;
 }
 
 .hide {

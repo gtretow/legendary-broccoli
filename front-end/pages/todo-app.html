@@ -15,46 +15,65 @@
     <!-- styles -->
     <link rel="stylesheet" href="../src/css/todo-app.styles.css" />
     <link rel="stylesheet" href="../src/css/reset.css" />
+    <link rel="stylesheet" href="../src/css/modal.css" />
 
     <title>Todo App</title>
   </head>
   <body>
     <div class="container">
-      <h1 class="todo-app__title">Todo App</h1>
+      <div id="modalMessage" class="logout-message hide__modal--message"></div>
+      <header>
+        <h1 class="todo-app__title">Todo App</h1>
+      </header>
+      <main>
+        <!-- Formulário para adicionar nova tarefa -->
+        <form class="todo-app__form" id="addTaskForm">
+          <label for="taskName" class="sr-only">Digite a nova tarefa</label>
+          <input
+            class="todo-app__input todo-app__input--task-name"
+            type="text"
+            id="taskName"
+            placeholder="Digite a nova tarefa"
+            required
+          />
+          <button
+            class="todo-app__button todo-app__button--submit"
+            type="submit"
+          >
+            Adicionar Tarefa
+          </button>
+        </form>
 
-      <!-- Formulário para adicionar nova tarefa -->
-      <form class="todo-app__form" id="addTaskForm">
-        <input
-          class="todo-app__input todo-app__input--task-name"
-          type="text"
-          id="taskName"
-          placeholder="Digite a nova tarefa"
-          required
-        />
-        <button class="todo-app__button todo-app__button--submit" type="submit">
-          Adicionar Tarefa
-        </button>
-      </form>
+        <!-- Lista de tarefas -->
+        <ul class="todo-app__list" id="taskList">
+          <!-- As tarefas serão inseridas aqui -->
+        </ul>
+        <div class="todo-app__list--logoutContainer">
+          <button id="logout" class="btn todo-app__list--logoutButton">
+            Logout
+          </button>
+        </div>
+      </main>
 
-      <!-- Lista de tarefas -->
-      <ul class="todo-app__list" id="taskList">
-        <!-- As tarefas serão inseridas aqui -->
-      </ul>
-      <div class="todo-app__list--logoutContainer">
-        <button id="logout" class="btn todo-app__list--logoutButton">
-          Logout
-        </button>
-      </div>
-    </div>
-
-    <div id="updateModal" class="modal hide">
-      <div class="modal__content">
-        <span class="modal__close-btn">&times;</span>
-        <h2>Atualizar Tarefa</h2>
-        <input type="text" id="updateTaskInput" placeholder="Novo título" />
-        <button id="updateTaskBtn" class="modal__update-button">
-          Atualizar
-        </button>
+      <div id="updateModal" class="modal hide">
+        <div class="modal__content">
+          <div class="modal__title--container">
+            <span id="closeBtn" class="modal__close-btn">&times;</span>
+            <h2>Atualizar Tarefa</h2>
+          </div>
+          <div class="modal__input--container">
+            <label for="updateTaskInput" class="sr-only">Atualize o Todo</label>
+            <input
+              class="modal__input"
+              type="text"
+              id="updateTaskInput"
+              placeholder="Atualize o Todo"
+            />
+            <button id="updateTaskBtn" class="modal__btn--submit" type="button">
+              Atualizar
+            </button>
+          </div>
+        </div>
       </div>
     </div>
 

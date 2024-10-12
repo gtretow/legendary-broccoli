@@ -2,7 +2,6 @@ import { openModal, closeModal } from "./modal.js";
 import { apiUrl } from "./config.js";
 
 const token = localStorage.getItem("token");
-const taskForm = document.getElementById("addTaskForm");
 let taskIdToUpdate;
 
 export function setTaskIdToUpdate(id) {
@@ -26,7 +25,7 @@ async function deleteTask(id) {
   }
 }
 
-async function updateTask() {
+export async function updateTask() {
   const newTask = updateTaskInput.value;
   try {
     const res = await fetch(`${apiUrl}/tasks/${taskIdToUpdate}`, {
@@ -50,7 +49,7 @@ async function updateTask() {
   }
 }
 
-async function handleCreateTask(e) {
+export async function handleCreateTask(e) {
   e.preventDefault();
   const title = document.getElementById("taskName").value;
 
@@ -90,7 +89,7 @@ export async function fetchTasks() {
       const div = document.createElement("div");
       div.innerHTML = `
           <div class="todo-app__list--taskContainer">
-            <li>nenhuma tarefa criada</li>
+            <li>Nenhuma tarefa criada</li>
           </div>`;
       taskList.appendChild(div);
       return;
@@ -118,6 +117,3 @@ export async function fetchTasks() {
     console.error(err);
   }
 }
-
-updateTaskBtn.addEventListener("click", updateTask);
-taskForm.addEventListener("submit", handleCreateTask);

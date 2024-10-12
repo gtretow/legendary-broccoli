@@ -9,6 +9,7 @@ const changeToRegisterScreenButton = document.getElementById("show-register");
 
 const loginScreen = document.getElementById("login-screen");
 const registerScreen = document.getElementById("register-screen");
+
 let token = localStorage.getItem("token");
 
 function loginScreenHandler() {
@@ -16,10 +17,26 @@ function loginScreenHandler() {
   loginScreen.classList.add("show");
   loginScreen.classList.remove("hide");
 }
+
 function registerScreenHandler() {
   loginScreen.classList.add("hide");
   registerScreen.classList.remove("hide");
   registerScreen.classList.add("show");
+}
+function checkInputs(form) {
+  let inputs;
+  let button;
+
+  if (form != undefined) {
+    inputs = form.querySelectorAll("input[required]");
+    button = form.querySelector('button[type="submit"]');
+  } else {
+    return;
+  }
+
+  const allFilled = [...inputs].every((input) => input.value.trim() !== "");
+
+  button.disabled = !allFilled;
 }
 
 async function handleRegisterUser(e) {
@@ -43,7 +60,8 @@ async function handleRegisterUser(e) {
       alert(data.message || "Erro no registro");
     }
   } catch (err) {
-    console.error(err);
+    showMessage("Erro no registro");
+    console.log(err);
   }
 }
 
@@ -67,10 +85,10 @@ async function handleLoginUser(e) {
       window.location.href = "pages/todo-app.html";
       fetchTasks();
     } else {
-      alert(data.message || "Erro no login");
+      alert("Usuário ou senha inválidos");
     }
   } catch (err) {
-    console.error(err);
+    console.log(err);
   }
 }
 
@@ -78,3 +96,6 @@ changeToLoginScreenButton.addEventListener("click", loginScreenHandler);
 changeToRegisterScreenButton.addEventListener("click", registerScreenHandler);
 registerForm.addEventListener("submit", handleRegisterUser);
 loginForm.addEventListener("submit", handleLoginUser);
+loginForm.addEventListener("input", () => checkInputs(loginForm));
+registerForm.addEventListener("input", () => checkInputs(registerForm));
+checkInputs();
