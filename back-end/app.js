@@ -15,7 +15,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "*",
+    origin: "https://gtretow.github.io",
     methods: ["GET", "POST", "PATCH", "PUT"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
