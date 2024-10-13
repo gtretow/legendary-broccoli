@@ -5,8 +5,3 @@
   Azure).
 - A aplicação deve ser acessível publicamente via HTTPS.
 
-
-
-- Resolução de Problemas:
-- Durante o desenvolvimento, documentar quaisquer problemas encontrados e
-  como você os solucionou (ex.: bugs, integrações).

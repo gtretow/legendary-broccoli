@@ -7,5 +7,4 @@ Dificuldade para colocar o backend online
 Apagão
 
 
-
 Não houve problemas no Front-End: Motivos 
