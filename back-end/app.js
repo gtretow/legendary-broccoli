@@ -10,7 +10,7 @@ const app = express();
 const corsOptions = {
   origin: "https://gtretow.github.io",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  allowedHeaders: ["Content-Type", "Authorization"],
+  optionsSuccessStatus: 204,
 };
 
 app.use(cors(corsOptions));
