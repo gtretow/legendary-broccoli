@@ -13,7 +13,13 @@ const { connectToRedis } = require("./config/redis");
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://gtretow.github.io"],
+    methods: ["GET", "POST", "PATCH", "PUT"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 app.use(express.json());
 
 connectToMongoDB();
