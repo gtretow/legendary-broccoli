@@ -18,6 +18,7 @@ app.use(
     origin: ["https://gtretow.github.io"],
     methods: ["GET", "POST", "PATCH", "PUT"],
     allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
   })
 );
 app.use(express.json());
