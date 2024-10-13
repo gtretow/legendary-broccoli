@@ -45,7 +45,7 @@ async function handleRegisterUser(e) {
   const password = document.getElementById("reg-password").value;
 
   try {
-    const res = await fetch(`${config.apiUrl}/auth/register`, {
+    const res = await fetch(`${config.apiUrl}auth/register`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password }),
