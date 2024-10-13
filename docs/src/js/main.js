@@ -60,7 +60,6 @@ async function handleRegisterUser(e) {
       alert(data.message || "Erro no registro");
     }
   } catch (err) {
-    showMessage("Erro no registro");
     console.log(err);
   }
 }
