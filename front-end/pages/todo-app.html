@@ -21,7 +21,7 @@
   </head>
   <body>
     <div class="container">
-      <div id="modalMessage" class="logout-message hide__modal--message"></div>
+      <div id="logoutMessage" class="logout-message hide"></div>
       <header>
         <h1 class="todo-app__title">Todo App</h1>
       </header>
@@ -44,7 +44,6 @@
           </button>
         </form>
 
-        <!-- Lista de tarefas -->
         <ul class="todo-app__list" id="taskList">
           <!-- As tarefas serão inseridas aqui -->
         </ul>
@@ -69,6 +68,17 @@
               id="updateTaskInput"
               placeholder="Atualize o Todo"
             />
+          </div>
+          <div class="modal__input--container">
+            <label for="updateTaskStatus" class="sr-only"
+              >Status da Tarefa</label
+            >
+            <select class="modal__select" id="updateTaskStatus">
+              <option value="pending">Pendente</option>
+              <option value="complete">Completa</option>
+            </select>
+          </div>
+          <div class="modal__input--container">
             <button id="updateTaskBtn" class="modal__btn--submit" type="button">
               Atualizar
             </button>

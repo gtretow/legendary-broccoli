@@ -3,9 +3,9 @@ const updateTaskInput = document.getElementById("updateTaskInput");
 
 import { setTaskIdToUpdate } from "./taskUtils.js";
 
-export async function openModal(taskId, currentTitle = " ") {
-  setTaskIdToUpdate(taskId);
-  updateTaskInput.value = currentTitle;
+export async function openModal(taskId, status) {
+  setTaskIdToUpdate(taskId, status);
+  updateTaskInput.value = "";
   updateModal.classList.remove("hide");
   updateModal.style.display = "flex";
 }

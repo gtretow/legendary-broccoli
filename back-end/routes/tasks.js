@@ -1,13 +1,13 @@
 const express = require("express");
 const { body, validationResult } = require("express-validator");
 const Task = require("../models/Task");
-
+const { authenticateJWT } = require("../middleware/authMiddleware");
 const router = express.Router();
 
-// Adicionar nova tarefa
 router.post(
   "/",
   [
+    authenticateJWT,
     body("taskItem")
       .not()
       .isEmpty()
@@ -28,7 +28,6 @@ router.post(
       });
       await task.save();
 
-      // Atualizar cache no Redis
       const redisClient = req.app.get("redisClient");
       await redisClient.del(`tasks_${req.user._id}`);
 
@@ -40,8 +39,7 @@ router.post(
   }
 );
 
-// Listar todas as tarefas
-router.get("/", async (req, res) => {
+router.get("/", authenticateJWT, async (req, res) => {
   try {
     const redisClient = req.app.get("redisClient");
     const cacheKey = `tasks_${req.user._id}`;
@@ -62,10 +60,12 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Atualizar título de uma tarefa
 router.put(
   "/:id",
-  [body("taskItem").notEmpty().withMessage("A terafa não pode estar vazia")],
+  [
+    authenticateJWT,
+    body("taskItem").notEmpty().withMessage("A terafa não pode estar vazia"),
+  ],
 
   async (req, res) => {
     const errors = validationResult(req);
@@ -83,7 +83,6 @@ router.put(
       task.taskItem = taskItem;
       await task.save();
 
-      // Atualizar cache no Redis
       const redisClient = req.app.get("redisClient");
       await redisClient.del(`tasks_${req.user._id}`);
 
@@ -95,8 +94,7 @@ router.put(
   }
 );
 
-// Remover uma tarefa
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", authenticateJWT, async (req, res) => {
   try {
     const task = await Task.findOneAndDelete({
       _id: req.params.id,
@@ -106,7 +104,6 @@ router.delete("/:id", async (req, res) => {
       return res.status(404).json({ message: "Tarefa não encontrada" });
     }
 
-    // Atualizar cache no Redis
     const redisClient = req.app.get("redisClient");
     await redisClient.del(`tasks_${req.user._id}`);
 
@@ -114,6 +111,42 @@ router.delete("/:id", async (req, res) => {
   } catch (err) {
     console.error("Erro de remoção de tarefa:", err);
     res.status(500).json({ message: "Erro no servidor" });
+  }
+});
+
+router.patch("/:id", authenticateJWT, async (req, res) => {
+  const { id } = req.params;
+  const { taskItem, status } = req.body;
+
+  try {
+    if (status && !["pending", "complete"].includes(status)) {
+      return res
+        .status(400)
+        .json({ message: "Status inválido. Use 'pending' ou 'complete'." });
+    }
+
+    const task = await Task.findOne({ _id: id, user: req.user._id });
+    if (!task) {
+      return res.status(404).json({ message: "Tarefa não encontrada." });
+    }
+
+    if (taskItem) {
+      task.taskItem = taskItem;
+    }
+
+    if (status) {
+      task.status = status;
+    }
+
+    await task.save();
+
+    const redisClient = req.app.get("redisClient");
+    await redisClient.del(`tasks_${req.user._id}`);
+
+    res.json(task);
+  } catch (error) {
+    console.error("Erro ao atualizar tarefa:", error);
+    res.status(500).json({ message: "Erro interno do servidor." });
   }
 });
 

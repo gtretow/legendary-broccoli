@@ -16,17 +16,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Conectar ao MongoDB
 connectToMongoDB();
 
-// Conectar ao Redis
 connectToRedis(app);
 
 app.get("/pages/todo-app.html", authenticateToken, (req, res) => {
   res.sendFile(path.join(__dirname, "pages/todo-app.html"));
 });
 
-// Rotas
 app.use("/api/auth", authRoutes);
 app.use("/api/tasks", authenticateJWT, taskRoutes);
 

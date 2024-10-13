@@ -6,7 +6,6 @@ const bcrypt = require("bcrypt");
 
 const router = express.Router();
 
-// Registro de usuário
 router.post(
   "/register",
   [
@@ -50,7 +49,6 @@ router.post(
   }
 );
 
-// Login de usuário
 router.post(
   "/login",
   [

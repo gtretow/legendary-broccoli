@@ -1,5 +1,5 @@
 import { fetchTasks } from "./taskUtils.js";
-import { apiUrl } from "./config.js";
+import { config } from "./config.js";
 
 const loginForm = document.getElementById("login-form");
 const registerForm = document.getElementById("register-form");
@@ -45,7 +45,7 @@ async function handleRegisterUser(e) {
   const password = document.getElementById("reg-password").value;
 
   try {
-    const res = await fetch(`${apiUrl}/auth/register`, {
+    const res = await fetch(`${config.apiUrl}/auth/register`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password }),
@@ -73,7 +73,7 @@ async function handleLoginUser(e) {
   };
 
   try {
-    const res = await fetch(`${apiUrl}/auth/login`, {
+    const res = await fetch(`${config.apiUrl}/auth/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(userData),

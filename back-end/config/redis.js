@@ -17,6 +17,7 @@ const connectToRedis = async (app) => {
     console.log("Conectado ao Redis com sucesso!");
   } catch (error) {
     console.error("Erro ao conectar ao Redis:", error);
+    process.exit(1);
   }
 };
 
