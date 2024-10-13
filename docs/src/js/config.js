@@ -1,5 +1,5 @@
 export const config = {
-  apiUrl: "https://98.80.79.255:5001/api",
+  apiUrl: "http://98.80.79.255:5001/",
 };
 
 /* window.location.hostname === "localhost"
