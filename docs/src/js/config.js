@@ -1,7 +1,3 @@
 export const config = {
-  apiUrl: "https://98.80.79.255:5001/api",
+  apiUrl: "https://todo-server-5b11429a38fd.herokuapp.com/",
 };
-
-/* window.location.hostname === "localhost"
-? "http://localhost:5000/api"
-: "https://api.minhaapp.com/", */
