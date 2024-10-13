@@ -13,29 +13,12 @@ const { connectToRedis } = require("./config/redis");
 
 const app = express();
 
-app.use(
-  cors({
-    origin: "https://gtretow.github.io",
-    methods: ["GET", "POST", "PATCH", "PUT"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true,
-  })
-);
+app.use(cors());
 app.use(express.json());
 
 connectToMongoDB();
 connectToRedis(app);
 
-/* app.use(express.static(path.join(__dirname, "../front-end"))); */
-
-/* app.get("/pages/todo-app.html", authenticateToken, (req, res) => {
-  res.sendFile(path.join(__dirname, "pages/todo-app.html"));
-}); */
-
-/* app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../front-end", "index.html"));
-});
- */
 app.use("/api/auth", authRoutes);
 app.use("/api/tasks", authenticateJWT, taskRoutes);
 
