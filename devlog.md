@@ -1,10 +1,10 @@
 ## Configuração de Redis e MongoDB
 No início, tive algumas dificuldades para implementar o Redis junto com o MongoDB. Acabei recorrendo a guias dos sites, o que foi útil. Tinha uma bagagem de conhecimento por já ter trabalhado com Redis no meu último emprego como desenvolvedor full-stack. Mesmo não tendo implementado diretamente, estudei bastante sobre como funciona e lembrava de algumas precauções, como iniciar o redis-server antes do app.js. Não foi um problema que me tomou muito tempo; bastou seguir os logs dos erros e pesquisar o que significavam para finalizar essa parte.
 
-##Erros no backend que impediam o usuário de logar 
+## Erros no backend que impediam o usuário de logar 
 Tive um erro bobo que deixei para resolver depois, pois estava focado em finalizar os métodos da rota tasks, que estavam dando problema. O erro era causado por configurações que não estavam bem implementadas no backend, especificamente uma falha de autenticação na função matchPassword. Após investigar, percebi que o problema estava no jeito como criei o método dentro do modelo User. Depois de pesquisar um pouco na internet, consegui resolver a situação e o login voltou a funcionar.
 
-##Contratempo com métodos 
+## Contratempo com métodos 
 Tive um problema similar com o método get, que não estava funcionando devido a um erro na autenticação do JWT. Eu tinha errado algumas configurações, e inicialmente não estava claro qual era a causa do problema. Após fazer alguns logs e entender melhor o que estava acontecendo, percebi dois erros: um no uso do redisClient dentro da aplicação e outro no nome da informação que o body estava recebendo.
 
 
