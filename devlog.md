@@ -1,4 +1,4 @@
-##Configuração de Redis e MongoDB
+## Configuração de Redis e MongoDB
 No início, tive algumas dificuldades para implementar o Redis junto com o MongoDB. Acabei recorrendo a guias dos sites, o que foi útil. Tinha uma bagagem de conhecimento por já ter trabalhado com Redis no meu último emprego como desenvolvedor full-stack. Mesmo não tendo implementado diretamente, estudei bastante sobre como funciona e lembrava de algumas precauções, como iniciar o redis-server antes do app.js. Não foi um problema que me tomou muito tempo; bastou seguir os logs dos erros e pesquisar o que significavam para finalizar essa parte.
 
 ##Erros no backend que impediam o usuário de logar 
@@ -8,15 +8,15 @@ Tive um erro bobo que deixei para resolver depois, pois estava focado em finaliz
 Tive um problema similar com o método get, que não estava funcionando devido a um erro na autenticação do JWT. Eu tinha errado algumas configurações, e inicialmente não estava claro qual era a causa do problema. Após fazer alguns logs e entender melhor o que estava acontecendo, percebi dois erros: um no uso do redisClient dentro da aplicação e outro no nome da informação que o body estava recebendo.
 
 
-##Apagão
+## Apagão
 Infelizmente, durante o projeto, São Paulo sofreu um apagão, o que prejudicou o andamento do meu teste. Usei esse tempo para planejar o que faria no dia seguinte, organizando horários e prioridades, mas esse contratempo me impediu de alcançar o nível máximo de satisfação com o projeto. A dificuldade em fazer o deploy na AWS, por exemplo, foi resultado desse atraso, e acabei não conseguindo pensar em uma solução certeira por conta disso.
 
 
-##Não houveram problemas graves no Front-End: Motivos 
+##N ão houveram problemas graves no Front-End: Motivos 
 Coincidentemente, eu tinha estudado muito HTML, CSS e JavaScript nos últimos dias. Queria me afastar de frameworks e me concentrar nos conceitos básicos de desenvolvimento, além de explorar novas maneiras de melhorar meu código. Isso me deixou com a parte de front-end fresquinha na cabeça, então, só precisei planejar como a aplicação seria e começar a montá-la. Aproveitei para usar o padrão BEM no CSS, que não tinha utilizado em projetos anteriores. Claro, houve alguns pequenos problemas com CSS e alguns erros de JS, mas nada que atrapalhasse muito o tempo.
 
 
-##Dificuldade para colocar o backend online 
+## Dificuldade para colocar o backend online 
 Esse foi o maior desafio. Infelizmente, não consegui dar o deploy da aplicação na AWS. Optei por usar o Render, pois sabia que, se não conseguisse resolver o problema, pelo menos teria o aplicativo online para ser testado por outra pessoa. Apesar de já ter trabalhado com AWS no meu último emprego, minha experiência se limitava a dar pull das atualizações no servidor e reiniciar o PM2, então o deploy na AWS era algo novo para mim. Comecei tentando seguir a documentação e alguns vídeos no YouTube, mas fiquei confuso, pois as informações não se cruzavam e percebi que muitos autores trabalhavam com Ubuntu, enquanto eu estava usando Windows. Depois de um tempo, desisti e tentei fazer o deploy no Google Cloud, mas também não consegui, pois não encontrei informações claras. Então voltei a tentar na AWS, dessa vez com um vídeo específico e a documentação. Após muito esforço, usei a ajuda de uma IA para explicar meu sistema operacional e o que eu queria evitar (por exemplo, não queria usar WSL, preferia resolver tudo no PowerShell). Essa IA acabou sendo uma ajuda valiosa, pois me deu dicas que, quando não eram claras, eu complementava com pesquisas na documentação para não perder o foco. Finalmente, cheguei longe, implementei meu front-end no GitHub Pages e tinha a intenção de usar a AWS para o back-end, mas um erro final me desestabilizou. Não consegui resolver um problema com o certificado SSL. Não importava onde procurasse ou o que fizesse, todas as tentativas falharam e não consegui fazer meu back-end usar HTTPS, o que impedia a comunicação com o front-end (erro ao cruzar HTTP com HTTPS). Depois de tantas tentativas, desisti devido à pressão, já tinha perdido tempo com o apagão e estava há muitas horas na frente do computador, sem conseguir raciocinar direito. Deixo uma foto a título de curiosidade para mostrar o servidor rodando na AWS.
 
 ![Screenshot_1](https://github.com/user-attachments/assets/f45c5aa5-e011-409a-a031-9dd3a049c0fd)
