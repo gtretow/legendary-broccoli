@@ -44,6 +44,10 @@ async function handleRegisterUser(e) {
   const username = document.getElementById("reg-username").value;
   const password = document.getElementById("reg-password").value;
 
+  if (!validateUsernameAsEmail(username)) {
+    return;
+  }
+
   try {
     const res = await fetch(`${config.apiUrl}/auth/register`, {
       method: "POST",
@@ -71,6 +75,10 @@ async function handleLoginUser(e) {
     password: document.getElementById("password").value,
   };
 
+  if (!validateUsernameAsEmail(username)) {
+    return;
+  }
+
   try {
     const res = await fetch(`${config.apiUrl}/auth/login`, {
       method: "POST",
@@ -89,6 +97,19 @@ async function handleLoginUser(e) {
   } catch (err) {
     console.log(err);
   }
+}
+
+function isValidEmail(email) {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email);
+}
+
+function validateUsernameAsEmail(username) {
+  if (!isValidEmail(username)) {
+    alert("O username deve ser um email válido.");
+    return false;
+  }
+  return true;
 }
 
 changeToLoginScreenButton.addEventListener("click", loginScreenHandler);
