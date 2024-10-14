@@ -12,7 +12,7 @@ Tive um problema similar com o método get, que não estava funcionando devido a
 Infelizmente, durante o projeto, São Paulo sofreu um apagão, o que prejudicou o andamento do meu teste. Usei esse tempo para planejar o que faria no dia seguinte, organizando horários e prioridades, mas esse contratempo me impediu de alcançar o nível máximo de satisfação com o projeto. A dificuldade em fazer o deploy na AWS, por exemplo, foi resultado desse atraso, e acabei não conseguindo pensar em uma solução certeira por conta disso.
 
 
-##N ão houveram problemas graves no Front-End: Motivos 
+## Não houveram problemas graves no Front-End: Motivos 
 Coincidentemente, eu tinha estudado muito HTML, CSS e JavaScript nos últimos dias. Queria me afastar de frameworks e me concentrar nos conceitos básicos de desenvolvimento, além de explorar novas maneiras de melhorar meu código. Isso me deixou com a parte de front-end fresquinha na cabeça, então, só precisei planejar como a aplicação seria e começar a montá-la. Aproveitei para usar o padrão BEM no CSS, que não tinha utilizado em projetos anteriores. Claro, houve alguns pequenos problemas com CSS e alguns erros de JS, mas nada que atrapalhasse muito o tempo.
 
 
