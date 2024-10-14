@@ -8,7 +8,7 @@ const { connectToMongoDB } = require("./config/db");
 const { connectToRedis } = require("./config/redis");
 const app = express();
 const corsOptions = {
-  origin: "https://gtretow.github.io",
+  origin: "https://legendary-broccoli-power.onrender.com",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   optionsSuccessStatus: 204,
 };
