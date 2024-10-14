@@ -1,5 +1,3 @@
 export const config = {
-  apiUrl: "https://localhost:5001/api",
+  apiUrl: "https://legendary-broccoli-c04j.onrender.com/api",
 };
-
-/* https://legendary-broccoli-c04j.onrender.com/api */
