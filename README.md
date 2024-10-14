@@ -35,9 +35,17 @@ Antes de começar, você precisará ter instalado em sua máquina:
    ```bash
    git clone https://github.com/gtretow/legendary-broccoli
 
-2. **Banco de Dados**
-3. Como o teste foi feito pensando em deploy, atualmente é necessário utilizar seu proprio banco Mongo e Redis para rodar o server localmente
-4. basta utilizar suas keys em um arquivo .env
+2. **Node**
+   Navegar para a pasta back-end e executar npm install
+
+3. **Server**
+   Na pasta back-end: node app.js para iniciar
+   O redis deve ser iniciado atráves do WLS (se estiver no windows). Basta usar redis-server
+
+ 
+4. **Banco de Dados**
+   Como o teste foi feito pensando em deploy, atualmente é necessário utilizar seu proprio banco Mongo e Redis para rodar o server localmente
+   basta utilizar suas keys em um arquivo .env
 
    ## Live Server
    [Link da Aplicação](https://legendary-broccoli-power.onrender.com/index.html)
