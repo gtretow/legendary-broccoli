@@ -44,4 +44,16 @@ Antes de começar, você precisará ter instalado em sua máquina:
 
    ## Comentários
    [Dev Log falando sobre dificuldades](https://github.com/gtretow/legendary-broccoli/blob/main/devlog.md)
+
+
+## Fotos
+![Screenshot_2](https://github.com/user-attachments/assets/bb615ea1-f0ca-44e1-b693-9fef7f795b65)
+
+![Screenshot_3](https://github.com/user-attachments/assets/46bc8aa4-4f48-4de6-8898-b756639f6eb5)
+
+![Screenshot_4](https://github.com/user-attachments/assets/e0530971-9f15-4031-b239-6a6f981a6e8e)
+
+![Screenshot_5](https://github.com/user-attachments/assets/fa6d8cee-83ba-41d9-8861-29eac49e8ba3)
+
+
    
