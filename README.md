@@ -41,5 +41,7 @@ Antes de começar, você precisará ter instalado em sua máquina:
 
    ## Live Server
    [Link da Aplicação](https://legendary-broccoli-power.onrender.com/index.html)
+
+   ## Comentários
    [Dev Log falando sobre dificuldades](https://github.com/gtretow/legendary-broccoli/blob/main/devlog.md)
    
