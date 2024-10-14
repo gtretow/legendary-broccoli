@@ -35,7 +35,7 @@ Antes de começar, você precisará ter instalado em sua máquina:
    ```bash
    git clone https://github.com/gtretow/legendary-broccoli
 
-2. **Banco de Dados
+2. **Banco de Dados**
 3. Como o teste foi feito pensando em deploy, atualmente é necessário utilizar seu proprio banco Mongo e Redis para rodar o server localmente
 4. basta utilizar suas keys em um arquivo .env
 
